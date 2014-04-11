@@ -195,6 +195,12 @@
 "
 " }}}
 
+"only load the plugin once
+if exists('g:loaded_dirdiff')
+	finish
+endif
+let g:loaded_dirdiff=1
+
 " Public Interface:
 command! -nargs=* -complete=dir DirDiff call <SID>DirDiff (<f-args>)
 command! -nargs=0 DirDiffOpen call <SID>DirDiffOpen ()
